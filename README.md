@@ -30,10 +30,13 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## components-name
   
  1, SlidetoggleComponent  
+ 
   @Input listName  <array>
+  
   @Input @Output  actionName <string>
  
  2,TableDrictionComponent
  
   @Input tableName  <array>标签数组
+  
   @Output positionCode  <number>传出点击标签位置
