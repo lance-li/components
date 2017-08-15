@@ -1,0 +1,9 @@
+<!--<p>
+  sign-in works!
+</p>-->
+<app-table-driction [tableName]="tableName" (positionCode)="getPositionCode($event)"></app-table-driction>
+
+<p (click)="slideUp()">出现</p>
+
+<app-slidetoggle [(actionName)]="actionName" [listName]="listName"></app-slidetoggle>
+
