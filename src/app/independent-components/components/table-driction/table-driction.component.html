@@ -1,0 +1,6 @@
+<div class="table-dirction">
+  <ul>
+    <li *ngFor="let tablename of tableName; let i = index" (click)="getPosition($event,i)">{{tablename}}</li>
+  </ul>
+  <p class="underLine" [style.width.%]="PLenth" [style.margin-left.px]="position"></p>
+</div>

@@ -17,10 +17,25 @@ export class SignInComponent implements OnInit {
   getPositionCode(code:number):void{
     // console.log(code)
   }
+
+
   // 弹出层属性
   public actionName: string = 'inactive';
 
+
   slideUp():void {
     this.actionName = 'active';
+  }
+
+  // 时间选择弹框
+  public timeActionName:string = 'inactive';
+  timeSlideUp():void {
+    this.timeActionName = 'active';
+  }
+  // 时间选择值
+  public timeValue: any;
+  public getTimeValue (value : any){
+   this.timeValue = value;
+     console.log(value);
   }
 }

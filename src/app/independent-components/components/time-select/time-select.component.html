@@ -1,0 +1,35 @@
+
+
+<div class="slide-toggle"  >
+  <div class="mask" [style.display]=" actionName =='active' ? 'block':'none'" (click)="slideDown()"></div>
+  <div class="slide-content" [@slideToggle] = "actionName">
+    <div class="cancel-confirm">
+      <p (click)="slideDown()">取消</p>
+      <p (click)="confirmValue()">确定</p>
+    </div>
+    <div class="time-select">
+      <div class="date-left">
+        <ul [ngStyle]="setCurrentStylesM()">
+          <li *ngFor="let daysarr of daysArr ; let i = index">{{daysarr.date}}&nbsp;{{daysarr.week}}</li>
+          <!--<li>都能拿上的</li>-->
+        </ul>
+        <div class="G-bag" myTouchSelect [translateTouchY] = "translateTouchMY" [dataLenth]="dateNum" (translateYChange)="getTranslateTouchMY($event)" (timeValue)="getDateValue($event)" (animatB)="getAnimatB($event)">
+          <div class="G-top"></div>
+          <div class="G-mid"></div>
+          <div class="G-btm"></div>
+        </div>
+      </div>
+      <div class="time-right">
+        <ul [ngStyle]="setCurrentStylesT()">
+          <li *ngFor="let timegroup of timeGroup ; let i = index">{{timegroup}}</li>
+          <!--<li>都能拿上的</li>-->
+        </ul>
+        <div class="G-bag" myTouchSelect [translateTouchY] = "translateTouchTY" [dataLenth]="timeGroup.length" (translateYChange)="getTranslateTouchTY($event)" (timeValue)="getTimeValue($event)" (animatB)="getAnimatTB($event)">
+          <div class="G-top"></div>
+          <div class="G-mid"></div>
+          <div class="G-btm"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

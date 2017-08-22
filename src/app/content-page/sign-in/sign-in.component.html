@@ -4,6 +4,8 @@
 <app-table-driction [tableName]="tableName" (positionCode)="getPositionCode($event)"></app-table-driction>
 
 <p (click)="slideUp()">出现</p>
+<p (click)="timeSlideUp()">时间出现{{ timeValue | json }}</p>
 
 <app-slidetoggle [(actionName)]="actionName" [listName]="listName"></app-slidetoggle>
 
+<app-time-select [dateNum]="27" [(actionName)]="timeActionName" (selectedValue)="getTimeValue($event)"></app-time-select>

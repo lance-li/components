@@ -1,16 +1,24 @@
+
 import { NgModule,ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 
 import {
   TableDrictionComponent,
-  SlidetoggleComponent,
+  SlideDoggleComponent,
+  LayerComponent,
+  TimeSelectComponent,
 } from './components';
+import { TouchSelectDirective } from './directive/touch-select.directive';
+
+
 
 
 const IC_COMPONENTS = [
   TableDrictionComponent ,
-  SlidetoggleComponent,
+  SlideDoggleComponent,
+  LayerComponent,
+  TimeSelectComponent,
 ];
 @NgModule({
   imports: [
@@ -18,6 +26,7 @@ const IC_COMPONENTS = [
   ],
   declarations: [
     ...IC_COMPONENTS,
+    TouchSelectDirective,
   ],
   exports: [
     ...IC_COMPONENTS,
