@@ -40,3 +40,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
   @Input tableName  <array>标签数组
   
   @Output positionCode  <number>传出点击标签位置
+
+ 3,TimeSelectComponent  
+   
+   @Input dateNum  <number>标签数组
+     
+   @Input @Output  actionName <string>
+   
+   @Output  selectedValue  
