@@ -162,8 +162,6 @@ export class TouchSelectDirective {
     let nowV : number= this.speed + t *  this.deceleration;
     let moveY: number = (this.speed + nowV) / 2 * t;
     let moveCy:number = ( this.translateTouchY + moveY);
-    // console.log(moveCy);
-    // console.log(this.dir * nowV );
     if (this.dir * nowV > 0) {
       // clearTimeout(this.timers);
       if (moveCy > this.maxY) {

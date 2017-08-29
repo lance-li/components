@@ -13,6 +13,11 @@ export class SignInComponent implements OnInit {
   }
 
   public tableName = ['普通登录','验证码快捷登录','手机登录'];
+  public tableStyle = {
+    lineHeight: "1rem",
+    fontSize : "0.35rem",
+    color: "#000",
+  };
   public listName = ['list1','list2'];
   getPositionCode(code:number):void{
     // console.log(code)
@@ -37,5 +42,11 @@ export class SignInComponent implements OnInit {
   public getTimeValue (value : any){
    this.timeValue = value;
      console.log(value);
+  }
+
+  public layerActionName: string = 'inactive';
+  public waringName: string='确定删除吗？';
+  layerSlideUp():void {
+    this.layerActionName = 'active';
   }
 }

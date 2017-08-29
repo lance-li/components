@@ -1,50 +1,102 @@
-# components
+# description
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.3.
+And this components only for Mobile Platform made by angular 4 , if you search in the network ,you will find not have components for  Mobile Platform used
+by angular 4 almost,so I make some components when I have sometime . If you want see the H5 pages , please clone the project : https://github.com/lance-li/components.git
 
-## Development server
+## Adding tanke
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+ - Install  tanke
 
-## Code scaffolding
+```bash
+npm install tanke --save
+```
+ - the ways of import
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+```bash
+import { IndependentComponentsModule } from 'tanke';
 
-## Build
+@NgModule({
+  imports: [ IndependentComponentsModule ,]
+})
+export class AppModule(){}
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+- open `.angular-cli.json` and insert a new entry into the styles array
 
-## Running unit tests
+```json
+ "styles": [
+   "../node_modules/tanke/assets/scss/tankestyle.scss",
+   "styles.scss",
+ ],
+```
+ Now only support scss , I will transform to css later! If you want this , please translate your project to support scss.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+   - if you start a new project please code
 
-## Running end-to-end tests
+   ```bash
+   ng new sassy-project --style=scss
+   ```
+   - or translate project please code
+   ```bash
+   ng set defaults.styleExt scss
+   ```
+   - then open your .angular-cli.json and change
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-
+   ```bash
+    "styles": [
+        "styles.css" // "styles.scss"
+    ]
+   ```
 ## components-name
   
- 1, SlidetoggleComponent  
- 
-  @Input listName  <array>
-  
-  @Input @Output  actionName <string>
- 
- 2,TableDrictionComponent
- 
+ -  SlidetoggleComponent
+
+```bash
+ <app-table-driction [tableName]="tableName" [tableStyle]="tableStyle" (positionCode)="getPositionCode($event)"></app-table-driction>
+
   @Input tableName  <array>标签数组
-  
+
   @Output positionCode  <number>传出点击标签位置
 
- 3,TimeSelectComponent  
+  @Input tableStyle? = {
+            lineHeight ?: "1rem",
+            fontSize ?: "0.35rem",
+            color ?: "#000",
+            underColor ?: "#000"
+          };
+
+ ```
+
+ - TableDrictionComponent
+
+```bash
+ <app-slidetoggle [(actionName)]="actionName" [listName]="listName"></app-slidetoggle>
+
+    @Input @Output  actionName <string>
+
+    @Input listName  <array>
+
+```
+
+ - TimeSelectComponent
+
+```bash
+  <app-time-select [dateNum]="27" [(actionName)]="timeActionName" (selectedValue)="getTimeValue($event)"></app-time-select>
    
    @Input dateNum  <number>标签数组
      
    @Input @Output  actionName <string>
    
    @Output  selectedValue  
+```
+
+ - LayerComponent
+
+```bash
+  <app-layer [(actionName)]="layerActionName" [waringName]="waringName"></app-layer>
+
+  @Input @Output  actionName <string>
+
+  @Input waringName  <string>
+```

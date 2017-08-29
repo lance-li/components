@@ -24,3 +24,16 @@ export const slideToggle = trigger('slideToggle', [
   transition('inactive => active', animate('300ms ease-in-out')),
   transition('active => inactive', animate('300ms ease-in-out'))
 ]);
+
+export const layerToggle = trigger('layerToggle', [
+  state('inactive', style({
+    display: 'none',
+    opacity:'0'
+  })),
+  state('active', style({
+    display: 'block',
+    opacity:'1'
+  })),
+  transition('inactive => active', animate('300ms ease-in-out')),
+  transition('active => inactive', animate('100ms ease-in-out'))
+]);

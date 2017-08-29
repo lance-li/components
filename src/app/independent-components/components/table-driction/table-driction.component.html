@@ -1,6 +1,6 @@
 <div class="table-dirction">
   <ul>
-    <li *ngFor="let tablename of tableName; let i = index" (click)="getPosition($event,i)">{{tablename}}</li>
+    <li *ngFor="let tablename of tableName; let i = index" (click)="getPosition($event,i)" [ngStyle]="setCurrentStylesM()">{{tablename}}</li>
   </ul>
-  <p class="underLine" [style.width.%]="PLenth" [style.margin-left.px]="position"></p>
+  <p class="underLine" [style.border-top]="'1px solid'+ (tableStyle['underColor'] ? tableStyle['underColor'] : '#dd4b39')" [style.width.%]="PLenth" [style.margin-left.px]="position"></p>
 </div>

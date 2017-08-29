@@ -1,3 +1,14 @@
-<p>
-  layer works!
-</p>
+
+<div class="layer-out">
+  <div class="mask" [style.display]=" actionName =='active' ? 'block':'none'" ></div>
+  <div class="layer-box" [@layerToggle] = "actionName">
+    <div class="layer-content">
+      <div class="layer-top">
+        <p>{{waringName}}</p>
+      </div>
+      <div class="layer-bottom">
+        <p (click)="slideDown()">确定</p>
+      </div>
+    </div>
+  </div>
+</div>
